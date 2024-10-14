@@ -9,11 +9,15 @@ st.sidebar.header("Input Data")
 weight = st.sidebar.slider("Masukkan berat badan (dalam kg):", min_value=0.0, max_value=200.0, value=70.0, step=0.1)
 height = st.sidebar.slider("Masukkan tinggi badan (dalam m):", min_value=0.5, max_value=2.5, value=1.75, step=0.01)
 age = st.sidebar.slider("Masukkan usia:", min_value=10, max_value=100, value=30, step=1)
+gender = st.sidebar.selectbox("Pilih jenis kelamin:", ["Laki-laki", "Perempuan"])
 
 # Create a button to calculate the BMI
 if st.sidebar.button("Hitung BMI"):
     # Calculate the BMI
-    bmi = weight / (height ** 2)
+    if gender == "Laki-laki":
+        bmi = weight / (height ** 2) * 1.05
+    else:
+        bmi = weight / (height ** 2) * 0.95
     # Display the BMI
     st.write(f"BMI Anda adalah: {bmi:.2f}")
     # Determine the weight category
@@ -26,7 +30,7 @@ if st.sidebar.button("Hitung BMI"):
     else:
         st.write("Anda obesitas.")
 
-    # Provide health recommendations based on age and BMI
+    # Provide health recommendations based on age, gender, and BMI
     if age < 30 and bmi < 25:
         st.write("Anda memiliki kesehatan yang baik! Tetap menjaga pola hidup seimbang.")
     elif age < 30 and bmi >= 25:
