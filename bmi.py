@@ -15,9 +15,9 @@ gender = st.sidebar.selectbox("Pilih jenis kelamin:", ["Laki-laki", "Perempuan"]
 if st.sidebar.button("Hitung BMI"):
     # Calculate the BMI
     if gender == "Laki-laki":
-        bmi = weight / (height ** 2) * 1.05
-    else:
         bmi = weight / (height ** 2) * 0.95
+    else:
+        bmi = weight / (height ** 2) * 1.05
     # Display the BMI
     st.write(f"BMI Anda adalah: {bmi:.2f}")
     # Determine the weight category
