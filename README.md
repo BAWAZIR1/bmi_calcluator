@@ -1,2 +1,2 @@
 # bmi_calcluator
-URL : https://bmicalcluator-hajer.streamlit.app/
+URL : https://bmicalcluator-hajerrrr.streamlit.app/
