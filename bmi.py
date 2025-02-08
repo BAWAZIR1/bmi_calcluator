@@ -68,3 +68,7 @@ if st.sidebar.button("Hitung BMI"):
     ax.set_ylabel('')
     ax.set_title('BMI Chart')
     st.pyplot(fig)
+
+# Footer
+st.sidebar.info('Pembaruan secara berkala')
+st.sidebar.text('Created by HUZAIR BAWAZIR (HAJER)')
